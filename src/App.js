@@ -16,7 +16,7 @@ import View from './components/NestedRoutes/View';
 import { Home } from './components/user/home/Home';
 import { UserDashboard } from './components/user/home/UserDashboard';
 import { Search } from './components/user/home/Search';
-import { Playlist } from './components/user/Playlist';
+import { Playlist } from './components/user/play_list/Playlist';
 
 function App() {
   return (

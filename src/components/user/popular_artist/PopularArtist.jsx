@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { BsInstagram } from "react-icons/bs";
 import { RiFacebookCircleFill } from "react-icons/ri";
 import { AiFillTwitterCircle } from "react-icons/ai";
-import './Home.css';
+import '../home/Home.css';
 
 export const PopularArtist = () => {
     const [posts, setPosts] = useState([]);
@@ -14,7 +14,7 @@ export const PopularArtist = () => {
     }, []);
 
     const fetchData = () => {
-        axios.get("http:localhost/file/getfile")
+        axios.get("http://localhost:8080/file/getfile")
             .then((res) => {
                 setPosts(res.data);
                 console.log("res.data", res.data);
@@ -34,7 +34,7 @@ export const PopularArtist = () => {
                             <div key={post._id} className="col-12 col-sm-6 col-md-4 col-lg-3">
                                 <Link to={`/${post.artistName}`} style={{ textDecoration: 'none' }}>
                                     <div className="card ar-card m-2 text-light" style={{ backgroundColor: "rgba(50, 49, 49,0)" }}>
-                                        <img src={`https://spotify-backend-nodejs.vercel.com/uploads/${post.artistImage}`} style={{ height: "170px", borderRadius: "100%", width: "auto" }} className="card-img-top" alt='songimage' />
+                                        <img src={`http://localhost:8080/uploads/${post.artistImage}`} style={{ height: "170px", borderRadius: "100%", width: "auto" }} className="card-img-top" alt='songimage' />
                                         <div className='card-body'>
                                             <b style={{ fontSize: "larger" }}>{post.artistName}</b><br />
                                             Artist

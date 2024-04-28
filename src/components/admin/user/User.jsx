@@ -12,7 +12,7 @@ export const User = () => {
     //get login details 
     const fetchData = () => {
         // axios.get('http://localhost:8080/form/getdetails')
-        axios.get('https://spotify-backend-nodejs.vercel.com/form/getdetails')
+        axios.get('http://localhost:8080/form/getdetails')
             .then(res => {
                 // if(res.data.roll==='user'){
                 SetPosts(res.data);

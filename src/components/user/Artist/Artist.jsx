@@ -16,7 +16,7 @@ export const Artist = () => {
 
     useEffect(() => {
         const fetchData = () => {
-            axios.get(`https://spotify-backend-nodejs.vercel.com/file/findbyartistname/${artistName}`)
+            axios.get(`http://localhost:8080/file/findbyartistname/${artistName}`)
                 .then((res) => {
                     // Filter unique song names
                     const uniqueSongs = res.data.filter((item, index, self) =>
@@ -61,7 +61,7 @@ export const Artist = () => {
     };
 
     const addfav = (fav) => {
-        axios.post(`https://spotify-backend-nodejs.vercel.com/file/addfav`, fav)
+        axios.post(`http://localhost:8080/file/addfav`, fav)
             .then(res => {
                 console.log("fav res..1..", res.data, "...", fav);
                 alert("added successfully");
@@ -87,7 +87,7 @@ export const Artist = () => {
                         {artistData.map((post, index) => (
                             <tr key={post.id}>
                                 <td>
-                                    <img src={`https://spotify-backend-nodejs.vercel.com/uploads/${post.artistImage}`} style={{ height: "80px", width: "auto" }} alt='artist' />
+                                    <img src={`http://localhost:8080/uploads/${post.artistImage}`} style={{ height: "80px", width: "auto" }} alt='artist' />
                                 </td>
                                 <td>{post.songName}</td>
                                 <td>
@@ -108,7 +108,7 @@ export const Artist = () => {
                         {/* Artist image */}
                         {artistData.length > 0 && (
                             <div style={{ display: "flex", alignItems: "center" }}>
-                                <img src={`https://spotify-backend-nodejs.vercel.com/uploads/${artistData[0].artistImage}`} style={{ height: "60px", width: "auto" }} alt='artist' />
+                                <img src={`http://localhost:8080/uploads/${artistData[0].artistImage}`} style={{ height: "60px", width: "auto" }} alt='artist' />
                                 {currentSongIndex !== null && (
                                     <h3 style={{ marginLeft: "10px", marginBottom: "0" }}>{artistData[currentSongIndex].songName}</h3>
                                 )}
@@ -121,7 +121,7 @@ export const Artist = () => {
                             <audio
                                 controls
                                 autoPlay
-                                src={`https://spotify-backend-nodejs.vercel.com/uploads/${artistData[currentSongIndex].song}`}
+                                src={`http://localhost:8080/uploads/${artistData[currentSongIndex].song}`}
                                 ref={(element) => setAudioRef(element)}
                             >
                                 Your browser does not support the audio element.
@@ -140,7 +140,7 @@ export const Artist = () => {
                                 <Modal.Body>
                                     <div className="row">
                                         <div className="col">
-                                            <img src={`https://spotify-backend-nodejs.vercel.com/uploads/${post.artistImage}`} style={{ height: "300px", width: "auto" }} alt='artist' />
+                                            <img src={`http://localhost:8080/uploads/${post.artistImage}`} style={{ height: "300px", width: "auto" }} alt='artist' />
                                         </div>
 
 

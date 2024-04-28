@@ -37,7 +37,7 @@ export const AddSong = () => {
         formData.append("songImage", selectedSongImage);
         formData.append("song", selectedSong);
 
-        axios.post("https://spotify-backend-nodejs.vercel.com/file/upload", formData, {
+        axios.post("http://localhost:8080/file/upload", formData, {
             headers: {
             "Content-Type": "multipart/form-data"
         }
