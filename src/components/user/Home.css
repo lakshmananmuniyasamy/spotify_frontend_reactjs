@@ -1,0 +1,93 @@
+.container-fluid {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: "nav1 main" "nav2 main" "nav2 main";
+    background-color: black;
+    gap: 10px;
+}
+
+.nav1 {
+    grid-area: nav1;
+    background-color: rgba(50, 49, 49, 0.562);
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.nav2 {
+    grid-area: nav2;
+    background-color: rgba(50, 49, 49, 0.562);
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.main {
+    grid-area: main;
+    background-color: rgba(50, 49, 49, 0.562);
+}
+
+.ar-card:hover{
+    background-color: rgba(50, 49, 49, 0.562) !important;
+}
+
+/* .logo-container {
+    flex: 1;
+  } */
+
+.nav1 nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.nav1 nav ul li {
+    font-size: 18px;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: #1DB954;
+    /* Spotify green color */
+}
+
+.nav2 {
+    padding: 10px;
+}
+ul li{
+    list-style: none;
+    color: white !important;
+}
+
+
+.col-12:hover .play-button {
+    display: block !important;
+}
+
+.play-button {
+    opacity: 0.8 !important;
+    z-index: 1 !important; 
+}
+
+.play-button button {
+    background-color: #1DB954;
+    border-color: #1DB954;
+}
+
+.play-button button:hover {
+    background-color: #1ED760;
+    border-color: #1ED760;
+}
+
+.play-button button i {
+    font-size: 1.5rem;
+}

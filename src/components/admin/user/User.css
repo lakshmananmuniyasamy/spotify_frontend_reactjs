@@ -1,0 +1,56 @@
+#in{
+    width: 70%;
+    border: 1px solid #687a59;
+}
+.file-input-label {
+    position: absolute;
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: lightblue;
+    /* color: rgb(250, 249, 249); */
+  }
+  
+  #songInput {
+    position: relative;
+    opacity: 0;
+    z-index: -1;
+  }
+
+/*   
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  } */
+
+
+
+  input[type="text"],
+  input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+  }
+
+  button {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  button:hover {
+      background-color: #0056b3;
+  }
