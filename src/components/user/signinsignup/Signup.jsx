@@ -29,7 +29,7 @@ export const Signup = () => {
     if (!data.username || !data.email || !data.password) {
       alert("Please fill in all fields.");
     } else {
-      fetch("http://localhost:8080/form/signup", {
+      fetch("https://spotify-backend-nodejs.vercel.com/form/signup", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/Json'
