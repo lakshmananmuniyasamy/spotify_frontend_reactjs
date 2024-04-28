@@ -14,7 +14,7 @@ export const PopularArtist = () => {
     }, []);
 
     const fetchData = () => {
-        axios.get("https://spotify-backend-nodejs.vercel.com/file/getfile")
+        axios.get("http:localhost/file/getfile")
             .then((res) => {
                 setPosts(res.data);
                 console.log("res.data", res.data);
