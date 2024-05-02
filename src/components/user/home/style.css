@@ -3,14 +3,14 @@
     height: 100vh;
     color: white;
     width: 100%;
-    /* position: fixed; */
+    /* display: flex; */
   }
   
-  .sidebar {
+  /* .sidebar {
     color: white;
     height: 100vh;
   }
-  
+   */
   .nav1, .nav2 {
     background-color: rgb(16, 16, 16);
     padding: 20px !important;
@@ -34,3 +34,22 @@
     color: #7691eb;
   }
   
+
+
+
+
+/* .sidebar {
+    color: white;
+    width: 200px;
+    flex-shrink: 0;
+    position: fixed;
+    left: 0; 
+    top: 0; 
+    bottom: 0; 
+    overflow-y: auto;
+}
+
+.col {
+    flex: 1; 
+    overflow-y: auto; 
+} */

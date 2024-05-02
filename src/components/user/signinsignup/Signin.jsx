@@ -51,7 +51,8 @@ export const Signin = () => {
                 if (data.user.role === 'admin') {
                     navigate(`/admin/${data.user.username}`);
                 } else {
-                    navigate("/");
+                    navigate(`/user/${data.user.username}`);
+
                 }
             })
             .catch(error => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import {  Outlet } from 'react-router-dom';
 import './style.css';
-import { TopNavbar } from './TopNavbar';
-import { SideNavbar } from './SideNavbar';
+// import { TopNavbar } from './TopNavbar';
+import { SideNavbar } from '../navbars/SideNavbar';
 
 export const UserDashboard = () => {
   return (
@@ -14,7 +14,7 @@ export const UserDashboard = () => {
 
         {/* pages */}
         <div className='col col-sm-10 ps-3'>
-         <TopNavbar />
+         
           <Outlet />
         </div>
       </div>

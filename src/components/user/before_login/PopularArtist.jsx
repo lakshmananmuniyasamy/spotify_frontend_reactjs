@@ -14,12 +14,14 @@ export const PopularArtist = () => {
     }, []);
 
     const fetchData = () => {
+      
         axios.get("http://localhost:8080/file/getfile")
             .then((res) => {
                 setPosts(res.data);
                 console.log("res.data", res.data);
             }).catch((err) => {
                 console.log("error", err);
+                alert("error", err);
             });
     };
 
