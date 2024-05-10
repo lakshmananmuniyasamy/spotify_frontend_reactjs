@@ -6,18 +6,19 @@ import { SideNavbar } from '../navbars/SideNavbar';
 
 export const UserDashboard = () => {
   return (
-    <div className='userdash '>
-      <div className='row g-0'>
-        <div className='col-sm-2 col sidebar poistion-fixed'>
+    <>
+     <div className='userdash'>
+        <div className='sidebar' >
          <SideNavbar />
         </div>
 
         {/* pages */}
-        <div className='col col-sm-10 ps-3'>
+        <div className=' main-content text-light'>
          
           <Outlet />
         </div>
-      </div>
-    </div>
+     </div>
+
+    </>
   );
 };

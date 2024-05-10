@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 export const TopNavbar = () => {
   return (
     <>
-         <Navbar expand="lg" className="p-0 navbar-dark">
+         <Navbar expand="lg" className="p-0 navbar-dark" style={{position: "sticky", top:0}} >
             <Container fluid>
               <Navbar.Brand href=""><MdArrowBackIos /></Navbar.Brand>
               <Navbar.Brand href=""><MdArrowForwardIos /></Navbar.Brand>

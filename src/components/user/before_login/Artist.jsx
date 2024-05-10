@@ -8,7 +8,6 @@ import { TopNavbar } from '../navbars/TopNavbar';
 export const Artist = () => {
     const { artistName } = useParams();
     const [artistData, setArtistData] = useState([]);
-    const [showLoginModal, setShowLoginModal] = useState(false)
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const [selectedImage, setSelectedImage] = useState(null);
@@ -26,7 +25,6 @@ export const Artist = () => {
                         ))
                     );
                     setArtistData(uniqueSongs);
-                    // setArtistData(res.data);
                 })
                 .catch((err) => {
                     console.log("error", err);
@@ -38,16 +36,18 @@ export const Artist = () => {
 
 
 
-    const playSong = (index, post) => {
+    const playSong = (post) => {
         console.log("but click post==", post);
         const token = localStorage.getItem('token')
         console.log("token", token);
-
+        localStorage.setItem('lastSong', JSON.stringify(post));
         if (!token) {
-            setShowLoginModal(true);
-            setSelectedImage(post.artistImage); // Set the selected image
+            setSelectedImage(post.artistImage); 
             setShow(true);
             return;
+        }
+        if (token){
+            axios.post(`http://localhost:8080/file/ad`)
         }
     };
 
@@ -56,7 +56,6 @@ export const Artist = () => {
         console.log("token", token);
 
         if (!token) {
-            setShowLoginModal(true, post);
             setShow(true);
             return;
         }
@@ -93,7 +92,7 @@ export const Artist = () => {
                                 <Button onClick={() => addfav(post)}><RiPlayListFill /></Button>
                             </td>
                             <td>
-                                <Button onClick={() => playSong(index, post)}>Play</Button>
+                                <Button onClick={() => playSong(post)}>Play</Button>
                             </td>
                         </tr>
                     ))}
@@ -103,7 +102,6 @@ export const Artist = () => {
 
             {/* model class  */}
 
-            {showLoginModal && (
                 <>
 
                     <Modal show={show} onHide={handleClose}>
@@ -115,8 +113,9 @@ export const Artist = () => {
 
 
                                 <div className="col d-flex justify-content-center align-items-center flex-column">
+                                    <h3 className='fw-bolder g-2'><center>Start listening with a free spotify account</center></h3><br />
                                     <Button variant="secondary">
-                                        <Link to="/signup" style={{ color: 'inherit', textDecoration: 'none' }}>
+                                        <Link to="/signup" style={{ color: 'inherit', textDecoration: 'none'  }}>
                                             Sign up for free
                                         </Link>
                                     </Button>
@@ -124,12 +123,13 @@ export const Artist = () => {
                                     <Button variant="primary" onClick={handleClose}>
                                         Download app
                                     </Button>
+                                    <br />
+                                   <small>Already have an account?<Link  style={{ color: 'inherit', textDecoration: 'none' }} to="/signin" >&nbsp;<b>Log in</b></Link></small> 
                                 </div>
                             </div>
                         </Modal.Body>
                     </Modal>
                 </>
-            )}
         </div>
     );
 };

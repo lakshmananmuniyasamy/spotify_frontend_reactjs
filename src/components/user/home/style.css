@@ -1,21 +1,42 @@
+* {
+  margin: 0;
+  font-family: Tilt Neon;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+.sidebar{
+  position: fixed;
+  width: 22%;
+}
+
+.main-content{
+  width: 77%;
+  background-color: rgb(28,27,27);
+  /* height: auto; */
+  position: absolute;
+  top: 8px;
+  left: 23%;
+  border-radius: 8px;
+
+}
 .userdash {
-    background-color: rgb(0,0,0);
-    height: 100vh;
-    color: white;
-    width: 100%;
-    /* display: flex; */
+    background-color: rgb(0,0,0) !important;
+    
   }
   
-  /* .sidebar {
-    color: white;
-    height: 100vh;
-  }
-   */
+
   .nav1, .nav2 {
-    background-color: rgb(16, 16, 16);
+    background-color: rgb(28,27,27);
     padding: 20px !important;
     border-radius: 9px;
     margin-bottom: 9px;
+  }
+
+  .nav2{
+    height: 100vh;
   }
   
   .nav-link {
@@ -33,23 +54,37 @@
   .nav-link:hover {
     color: #7691eb;
   }
-  
 
 
-
-
-/* .sidebar {
-    color: white;
-    width: 200px;
-    flex-shrink: 0;
+  .bottom {
     position: fixed;
-    left: 0; 
-    top: 0; 
-    bottom: 0; 
-    overflow-y: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Align items horizontally */
 }
 
-.col {
-    flex: 1; 
-    overflow-y: auto; 
-} */
+.playing-song {
+    display: flex;
+    align-items: center;
+}
+
+.song-details {
+    display: flex;
+    align-items: center;
+}
+
+.song-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+}
